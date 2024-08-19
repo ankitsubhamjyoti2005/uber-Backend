@@ -8,10 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-
 public interface RiderService {
 
-    RideRequestDTO requestRide(RideService rideRequestDTO);
+    RideRequestDTO requestRide(RideRequestDTO rideRequestDTO);
 
 
     driverDTO ratedriver(Long riderId , Integer rating);

@@ -25,7 +25,7 @@ public class Ride {
 
     @Column(columnDefinition = "Geometry(point, 4326)")
     private Point dropOffLocation;
-
+  
     @CreationTimestamp
     private LocalDateTime createdTime;
 
@@ -40,6 +40,8 @@ public class Ride {
 
     @Enumerated(EnumType.STRING)
     private RideStatus rideStatus;
+
+    private String OTP;
 
     private Double fare;
 
