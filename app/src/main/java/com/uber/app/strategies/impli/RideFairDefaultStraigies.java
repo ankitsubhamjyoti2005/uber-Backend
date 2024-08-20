@@ -8,14 +8,16 @@ import com.uber.app.strategies.RideFareCalculation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
+
 @Service
+@RequiredArgsConstructor
 public class RideFairDefaultStraigies implements RideFareCalculation {
 
     private final DistanceServices distanceServices;
+
     @Override
     public double calculateFare(RideRequest rideRequest) {
-        Double distance = distanceServices.calculateDistance(rideRequest.getPickUpLocation(),
+        double distance = distanceServices.calculateDistance(rideRequest.getPickUpLocation(),
                 rideRequest.getDropOffLocation());
 
         return distance*RIDER_FAIR_MULTIPLIER;

@@ -4,6 +4,7 @@ import com.uber.app.entities.Driver;
 import org.geolatte.geom.Point;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,5 +17,5 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
             "WHERE d.available = true AND ST_DWithin(d.current_location, :pickupLocation, 10000) " +
             "ORDER BY distance " +
             "LIMIT 10", nativeQuery = true)
-    List<Driver> findMatchingDrivers(Point pickUpLocation);
+    List<Driver> findTenNearestDrivers(@Param("pickupLocation") Point pickUpLocation);
 }
