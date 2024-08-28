@@ -7,6 +7,7 @@ import com.uber.app.services.impli.DistanceServiceOSRMImpli;
 import com.uber.app.strategies.RideFareCalculation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.locationtech.jts.geom.Point;
 
 
 @Service

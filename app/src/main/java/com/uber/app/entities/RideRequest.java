@@ -4,7 +4,7 @@ import com.uber.app.entities.enums.RideRequestStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.geolatte.geom.Point;
+import org.locationtech.jts.geom.Point;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
